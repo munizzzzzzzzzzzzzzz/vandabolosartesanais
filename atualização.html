@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <title>VANDA BOLOS ARTESANAIS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ec9c9c; 
+            color: white; 
+            margin: 5;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            background-color: #FADADD;
+            padding: 10px;
+        }
+        header img {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+        }
+        header h1 {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black; 
+            text-align: center; 
+        }
+        label {
+            font-weight: bold;
+            text-shadow: 1px 1px 2px black; 
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        input, select {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            background-color: #fff;
+            color: black;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #c54384;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #c54384;
+        }
+        #orderSummary h2, #orderSummary p {
+            color: white;
+            font-weight: bold;
+        }
+        /* Estilo das fotos */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .gallery div {
+            flex: 1 1 calc(33% - 20px);
+            margin: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .gallery p {
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .gallery div {
+                flex: 1 1 calc(50% - 20px);
+            }
+            header h1 {
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery div {
+                flex: 1 1 100%;
+            }
+            header h1 {
+                font-size: 18px;
+            }
+            input, select {
+                padding: 8px;
+            }
+            button {
+                padding: 8px 15px;
+            }
+        }
+        .whatsapp-success {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .whatsapp-success img {
+            width: 50px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" height="100" width="100" alt="Logo da Loja de Bolos">
+        <h1>VANDA BOLOS ARTESANAIS</h1>
+    </header>
+
+    <div class="container">
+        <form id="cakeOrderForm">
+            <div class="section">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div class="section">
+                <label for="dataEntrega">Data de Entrega:</label><br>
+                <input type="date" id="dataEntrega" name="dataEntrega" required>
+            </div>
+
+            <div class="section">
+                <label for="horarioEntrega">Horário de Entrega:</label><br>
+                <input type="time" id="horarioEntrega" name="horarioEntrega" required>
+            </div>
+
+            <div class="section">
+                <label for="pagamento">Forma de Pagamento:</label><br>
+                <select id="pagamento" name="pagamento" required>
+                    <option value="dinheiro">DINHEIRO</option>
+                    <option value="pix"> PIX - 11111111111</option>
+                </select>
+            </div>
+
+
+            <div class="section">
+                <label for="simples">Bolos Simples:</label><br>
+                <select id="simples" name="simples" required>
+                    <option value="Abacaxi - R$ 35,00">Abacaxi - R$ 35,00</option>
+                    <option value="Banana - R$ 35,00">Banana - R$ 35,00</option>
+                    <option value="Cenoura - R$ 30,00">Cenoura - R$ 30,00</option>
+                    <option value="Chocolate - R$ 30,00">Chocolate - R$ 30,00</option>
+                    <option value="Coco - R$ 30,00">Coco - R$ 30,00</option>
+                    <option value="Formigueiro - R$ 30,00">Formigueiro - R$ 30,00</option>
+                    <option value="Fubá - R$ 30,00">Fubá - R$ 30,00</option>
+                    <option value="Fubá c/ Goiabada - R$ 30,00">Fubá c/ Goiabada - R$ 30,00</option>
+                    <option value="Laranja - R$ 30,00">Laranja - R$ 30,00</option>
+                    <option value="Limão - R$ 30,00">Limão - R$ 30,00</option>
+                    <option value="Toalha Felpuda - R$ 35,00">Toalha Felpuda - R$ 35,00</option>
+                    <option value="🚫">🚫</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <label for="massa">Escolha a massa:</label><br>
+                <select id="massa" name="massa" required>
+                    <option value="BOLO SIMPLES!!!">BOLO SIMPLES!!!</option>
+                    <option value="Branca">Branca</option>
+                    <option value="Chocolate">Chocolate</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <label for="recheio">Escolha o recheio:</label><br>
+                <select id="recheio" name="recheio" required>
+                    <option value="chocolate">BOLO SIMPLES!!!</option>
+                    <option value="Brigadeiro">Brigadeiro</option>
+                    <option value="Brigadeiro Branco">Brigadeiro Branco</option>
+                    <option value="Brigadeiro Branco c/ Abacaxi">Brigadeiro Branco c/ Abacaxi</option>
+                    <option value="Brigadeiro Branco c/ Morango">Brigadeiro Branco c/ Morango</option>
+                    <option value="Brigadeiro Branco c/ Nozes">Brigadeiro Branco c/ Nozes</option>
+                    <option value="Brigadeiro Branco c/ Pêssego">Brigadeiro Branco c/ Pêssego</option>
+                    <option value="Creme">Creme</option>
+                    <option value="Creme c/ Abacaxi">Creme c/ Abacaxi</option>
+                    <option value="Creme c/ Nozes">Creme c/ Nozes</option>
+                    <option value="Creme c/ Pêssego">Creme c/ Pêssego</option>
+                    <option value="Mousse de Chocolate">Mousse de Chocolate</option>
+                    <option value="Doce de Leite c/ Abacaxi">Doce de Leite c/ Abacaxi</option>
+                    <option value="Mousse de Chocolate c/ Maracujá">Mousse de Chocolate c/ Maracujá</option>
+                    <option value="Doce de Leite c/ Ameixa">Doce de Leite c/ Ameixa</option>
+                    <option value="Mousse de Morango">Mousse de Morango</option>
+                    <option value="Doce de Leite c/ Nozes">Doce de Leite c/ Nozes</option>
+                    <option value="Prestígio">Prestígio</option>
+                    <option value="Floresta Branca">Floresta Branca</option>
+                    <option value="Prestígio c/ Brigadeiro">Prestígio c/ Brigadeiro</option>
+                    <option value="Floresta Negra">Floresta Negra</option>
+                    <option value="Tropical de Frutas">Tropical de Frutas</option>
+                    <option value="Leite Ninho">Leite Ninho</option>
+                    <option value="Leite Ninho c/ Morango">Leite Ninho c/ Morango</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <label for="decoracao">Escolha a decoração:</label><br>
+                <select id="decoracao" name="decoracao" required>
+                    <option value="BOLO SIMPLES!!!">BOLO SIMPLES!!!</option>
+                    <option value="Chantilly Tradicional">Chantilly Tradicional</option>
+                    <option value="Chantichoco">Chantichoco</option>
+                    <option value="Chantininhoo">Chantininho</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <label for="tamanho">Escolha o tamanho:</label><br>
+                <select id="tamanho" name="tamanho" required>
+                    <optgroup label="Redondo">
+                        <option value="Redondo: 18 fatias (21 cm) - R$ 81,00">18 fatias (21 cm) - R$ 81,00</option>
+                        <option value="Redondo: 30 fatias (26 cm) - R$ 135,00">30 fatias (26 cm) - R$ 135,00</option>
+                    </optgroup>
+                    <optgroup label="Retângular">
+                        <option value="Retângular: 20 fatias (21x15 cm) - R$ 90,00">20 fatias (21x15 cm) - R$ 90,00</option>
+                        <option value="Retângular: 24 fatias (26x18 cm) - R$ 108,00">24 fatias (26x18 cm) - R$ 108,00</option>
+                        <option value="Retângular: 45 fatias (31x22,5 cm) - R$ 202,50">45 fatias (31x22,5 cm) - R$ 202,50</option>
+                        <option value="Retângular: 112 fatias (37x26,5 cm) - R$ 504,00">112 fatias (37x26,5 cm) - R$ 504,00</option>
+                        <option value="Retângular: 120 fatias (41x31 cm) - R$ 540,00">120 fatias (41x31 cm) - R$ 540,00</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <button type="submit">Fazer Pedido</button>
+        </form>
+
+        <div id="orderSummary"></div>
+        <div class="section">
+            <button id="whatsappButton" style="display:none;">Enviar Pedido para WhatsApp</button>
+        </div>
+
+        <script>
+            document.getElementById('cakeOrderForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Example summary of order
+                const orderDetails = `
+                🍰*NOME:* ${document.getElementById('nome').value}\n
+                🍰*DATA DE ENTREGA:* ${document.getElementById('dataEntrega').value}\n
+                🍰*HORÁRIO:* ${document.getElementById('horarioEntrega').value}\n
+                🍰*FORMA DE PAGAMENTO:* ${document.getElementById('pagamento').value}\n
+                🍰*BOLO SIMPLES:* ${document.getElementById('simples').value}\n
+                🍰*MASSA:* ${document.getElementById('massa').value}\n
+                🍰*RECHEIO:* ${document.getElementById('recheio').value}\n
+                🍰*DECORAÇÃO:* ${document.getElementById('decoracao').value}\n
+                🍰*TAMANHO:* ${document.getElementById('tamanho').value}
+                `;
+                document.getElementById('orderSummary').innerHTML = `<h2>Resumo do Pedido:</h2><p>${orderDetails.replace(/\n/g, '<br>')}</p>`;
+                document.getElementById('whatsappButton').style.display = 'block';
+        
+                // Create WhatsApp message link
+                const whatsappLink = `https://wa.me/5519998635561?text=${encodeURIComponent(orderDetails)}`;
+                document.getElementById('whatsappButton').setAttribute('onclick', `window.open('${whatsappLink}', '_blank')`);
+            });
+        </script>
+        
+
+        <div class="gallery">
+            <div>
+                <img src="bolo1.png" alt="Bolo de Prestígio" height="300px">
+                <p>Bolo de Prestígio</p>
+            </div>
+            <div>
+                <img src="bolo2.png" alt="Bolo de Morango" height="300px">
+                <p>Bolo de Leite Ninho c/ Morango</p>
+            </div>
+            <div>
+                <img src="bolo3.png" alt="Bolo Tropical" height="300px">
+                <p>Bolo Tropoical</p>
+            </div>
+            <div
